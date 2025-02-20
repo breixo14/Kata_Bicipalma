@@ -1,4 +1,5 @@
 package org.example;
+import org.example.Bicicleta;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -6,10 +7,10 @@ import java.util.Collections;
 import java.util.List;
 
 public class Estacion {
-    public int id;
-    public String direccion ;
-    public int numeroAnclajes ;
-    public List<Integer> anclajes ;
+    private int id;
+    private String direccion ;
+    private int numeroAnclajes ;
+    private List<Integer> anclajes ;
 
     public Estacion(int id, String direccion, int numeroAnclajes){
         this.id= id;
@@ -27,6 +28,17 @@ public class Estacion {
     public Integer anclajesLibres(){
         return Collections.frequency(anclajes,0);
     }
+    public Integer generarAnclaje(){
+        return (int) (Math.random() * numeroAnclajes) + 1;
+    }
+    public void anclarBicleta(){
+            for (int i = 0; i < numeroAnclajes; i++) {
+                if (i == 0){
 
+                }
+            }
+    }
+
+    }
 
 }

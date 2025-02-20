@@ -1,6 +1,8 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class Estacion {
@@ -14,9 +16,17 @@ public class Estacion {
         this.direccion = direccion;
         this.numeroAnclajes = numeroAnclajes;
         this.anclajes = new ArrayList<>();
+        for (int i = 0; i < numeroAnclajes; i++) {
+            this.anclajes.add(0);
+        }
     }
 
-    public String consultarEstacion() {
-        return String.format("Estacion: %s, Direccion: %d, Numero Anclajes: %d", direccion, numeroAnclajes, id);
+    public void consultarEstacion() {
+        System.out.println(String.format("Estacion: %s, Direccion: %d, Numero Anclajes: %d", direccion, numeroAnclajes, id));
     }
+    public Integer anclajesLibres(){
+        return Collections.frequency(anclajes,0);
+    }
+
+
 }

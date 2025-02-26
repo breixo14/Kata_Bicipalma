@@ -59,14 +59,15 @@ public class Estacion {
         }
     };
 
-    public void retirarBicicleta(TarjetaUsuario tarjetaUsuario) {
-        for (int i = 0; i  TarjetaUsuario.getId(tarjetaUsuario); i++) {
-            if (anclajes.get(i) == 0){
-                this.anclajes.set(i, TarjetaUsuario tarjetaUsuario.id());
-                System.out.println(String.format("Bicicleta:%d Anclada en el anclaje:%d",bicicleta.getId(),i+1));
-                return;
+    public int retirarBicicleta(Bicicleta bicicleta) {
+        int idbici = bicicleta.getId();
+        for (int i = 0; i < numeroAnclajes; i++) {
+            if (anclajes.get(i) == bicicleta.getId()){
+                this.anclajes.set(i, 0);
+
             }
         }
+        return bicicleta.getId();
     }
 }
 

@@ -18,8 +18,8 @@ public class TarjetaUsuario {
             return "false";
         }
     }
-    public static String getId(TarjetaUsuario tarjetaUsuario) {
-        return id;
+    public static int getId(TarjetaUsuario tarjetaUsuario) {
+        return Integer.parseInt(id);
     }
 
 }

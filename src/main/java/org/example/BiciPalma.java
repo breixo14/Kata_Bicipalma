@@ -52,7 +52,8 @@ public class BiciPalma {
 
         System.out.println("¿tarjeta de usuario activada? (true/false): " + TarjetaUsuario.leerTarjetaUsuario(tarjetaUsuario) );
 
-        estacion.retirarBicicleta(tarjetaUsuario);
+        Bicicleta bici = new Bicicleta(bicicletas[0]);
+        estacion.retirarBicicleta(bici);
 
         estacion.consultarAnclajes();
 

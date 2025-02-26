@@ -3,6 +3,7 @@ package org.example;
 
 import org.example.Estacion;
 import org.example.Bicicleta;
+import org.example.TarjetaUsuario;
 
 public class BiciPalma {
     public static void main(String[] args) {
@@ -42,6 +43,20 @@ public class BiciPalma {
 
         System.out.println("\n **** caso TEST consultar bicicletas ancladas **** \n");
         estacion.consultarAnclajes();
+
+        /* caso TEST retirar bicicleta */
+
+        System.out.println("\n **** caso TEST retirar bicicleta **** \n");
+
+        TarjetaUsuario tarjetaUsuario = new TarjetaUsuario("000456789", true);
+
+        System.out.println("¿tarjeta de usuario activada? (true/false): " + TarjetaUsuario.leerTarjetaUsuario(tarjetaUsuario) );
+
+        estacion.retirarBicicleta(tarjetaUsuario);
+
+        estacion.consultarAnclajes();
+
+        System.out.println("anclajesLibres: " + estacion.anclajesLibres());
 
 }
 }
